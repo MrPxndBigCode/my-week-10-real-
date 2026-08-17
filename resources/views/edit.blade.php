@@ -1,15 +1,15 @@
 @extends('layout')
 
-@section('title', 'เขียนบทความ')
+@section('title', 'แก้ไขบทความ')
 
 @section('content')
 
-    <h2 class="text-center">เขียนบทความ</h2>
-    <form method="post" action="/form/insert">
+    <h2 class="text-center">แก้ไขบทความ</h2>
+    <form method="post" action="/update/{{ $blog->id }}">
         @csrf
         <div class="form-group">
             <label for="title">ชื่อบทความ</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title" value="{{ $blog->title }}">
         </div>
 
         @error('title')
@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label for="content">เนื้อหา</label>
-            <textarea class="form-control" id="content" name="content" cols="30" rows="5"></textarea>
+            <textarea class="form-control" id="content" name="content" cols="30" rows="5">{{ $blog->content }}</textarea>
         </div>
 
         @error('content')

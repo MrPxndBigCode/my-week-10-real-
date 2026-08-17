@@ -31,9 +31,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/form">เขียนบทความ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->is('claim') ? 'active' : '' }}" href="{{ route('claim.form') }}">แจ้งเคลมสินค้า</a>
-                </li>
+
             </ul>
 
         </div>

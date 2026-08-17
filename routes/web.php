@@ -21,7 +21,8 @@ Route::post('/books', [BookController::class, 'store']);
 Route::post('/create',[AdminController::Class, 'create'])->name('create');
 Route::post('/form/insert',[AdminController::class, 'insert']);
 
-Route::get('/claim', [ClaimController::class, 'showForm'])->name('claim.form');
-Route::post('/claim', [ClaimController::class, 'submitForm'])->name('claim.submit');
 
 Route::get('/delete/{id}',[AdminController::class, 'delete']);
+Route::get('/change/{id}',[AdminController::class, 'change']);
+Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('edit');
+Route::post('/update/{id}', [AdminController::class, 'update']);
